@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <h1><span>P</span>ortfolio</h1>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Web Developer</p>
+                <h1>Hi, I'm <span>Nebih Haziri</span></h1>
+            </div>
+        </div>
+    </div>    
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="https://www.nita.edu.sa/images/thumbs/0001200_web-development-beginner.jpeg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>My journey from waiter/bartender to plumbing, combined with studying economics and recently learning programming for a few months, has made me a adaptable and determined professional. As I near the end of my Economics degree, I'm excited to apply my diverse skills, including my new programming knowledge, to real-world situations. I've also achieved certifications as a Central Heating Installer and Forex Trader, showcasing my hands-on experiences. I'm committed to continuous learning and ready to contribute to collaborative projects with my varied expertise.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experiences')">Work Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Economics</span><br>Macro & Micro Economic</li>
+                            <li><span>Banking/Finance</span><br>Finance</li>
+                            <li><span>Web Development</span><br>HTML CSS Javascript</li>
+                        </ul>
+                    </div><div class="tab-contents" id="experiences">
+                        <ul>
+                            <li><span>2018-2020</span><br>Waiter/Bartender</li>
+                            <li><span>2020-2021</span><br>Plumber</li>
+                        </ul>
+                    </div><div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>Elementary School</span><br>"Ali Kelmendi" Vushtrri</li>
+                            <li><span>High School</span><br>"Eqrem Qabej" Vushtri</li>
+                            <li><span>Central Heating Installer</span><br>Diakonie Training Center</li>
+                            <li><span>Bachelor</span><br>University of Prishtina "Hasan Prishtina"</li>
+                            <li><span>Qualified Forex Trader</span><br>"ArianitFX"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links")
+        var tabcontents = document.getElementsByClassName("tab-contents")
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link")
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab")
+            }
+            event.currentTarget.classList.add("active-link")
+            document.getElementById(tabname).classList.add("active-tab")
+        }
+    </script>
+</body>
+</html>
