@@ -16,7 +16,6 @@
                 <ul id="sidemenu">
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <i class="fa fa-times" onclick="closemenu()"></i>
@@ -76,28 +75,28 @@
                     <img src="https://static.vecteezy.com/system/resources/previews/002/076/481/non_2x/online-calculator-illustration-concept-vector.jpg">
                     <div class="layer">
                         <h3>Calculator</h3>
-                        <p>adasd</p>
+                        <p>This is a simple web-based calculator project created using HTML, CSS, and JavaScript. The calculator allows users to perform basic arithmetic operations such as addition, subtraction, multiplication, and division.</p>
                         <a href="https://calculator-8c9.pages.dev/" target="_blank" rel="noopener noreferrer"><i class="fa fa-external-link"></i></a>
                     </div>
                 </div> 
                 <div class="work">
                     <img src="https://www.trendywalldesigns.com/cdn-cgi/image/quality%3D85/assets/images/chalkboard-wall-decals-c62.jpg">
                     <div class="layer second">
-                        <h3>Calculator</h3>
-                        <p>adasd</p>
+                        <h3>Etch A Sketch</h3>
+                        <p>A simple Etch-a-Sketch web application built with HTML, CSS, and JavaScript. Users can draw on the grid by hovering over the pixels using different color options.</p>
                         <a href="https://etch-a-sketch-cup.pages.dev/" target="_blank" rel="noopener noreferrer"><i class="fa fa-external-link"></i></a>
                     </div>
                 </div>
                 <div class="work">
                     <img src="https://media.istockphoto.com/id/1056840214/vector/rock-paper-scissors-vector-illustration.jpg?s=612x612&w=0&k=20&c=6KEBfon5f9BXXhLiu9JfOk6EHsM193SiWMcqDjN1jqM=">
                     <div class="layer">
-                        <h3>Calculator</h3>
-                        <p>adasd</p>
+                        <h3>Rock Paper Scissors</h3>
+                        <p>This simple web application allows users to play the classic Rock Paper Scissors game against a computer opponent. The game features a user interface with buttons to select their choice (Rock, Paper, or Scissors), real-time updates on the choices made by both the player and the computer, and a scoring system to keep track of the game progress.</p>
                         <a href="https://rock-paper-scisor-game.pages.dev/" target="_blank" rel="noopener noreferrer"><i class="fa fa-external-link"></i></a>
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn">See more</a>
+            <a href="https://github.com/Nebih123/" target="_blank" class="btn">See more</a>
         </div>
     </div>
 <div id="contact">
@@ -108,24 +107,24 @@
                 <p><i class="fa fa-paper-plane"></i> nebihhaziri15@gmail.com</p>
                 <p><i class="fa fa-phone"></i> +38345971252</p>
                 <div class="social-icons">
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-instagram"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
+                    <a href="https://github.com/Nebih123/" target="_blank"><i class="fa fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/nebih-haziri-04265116a/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/nebih.h/" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/nebih.hh/" target="_blank"><i class="fa fa-instagram"></i></a>
                 </div>
                 <a href="../Nebih's CV.pdf" target="_blank" class="btn btn2">My CV</a>
             </div>
             <div class="contact-right">
-                <form>
+                <form name="submit-to-google-sheet">
                     <input type="text" name="Name" placeholder="Your Name" required>
                     <input type="email" name="Email" placeholder="Your Email" required>
                     <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                     <button type="submit" class="btn btn2">Submit</button>
                 </form>
+                <span id="msg"></span>
             </div>
         </div>
     </div>
-    .copyright
 </div>
 
     <script>
@@ -151,5 +150,24 @@
             sidemenu.style.right = "-200px";
         }
     </script>    
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxudA6LYIY3nPluDYUcb3Bo6wUAVBie0_S4Cr0-YrIhrqkDSNdjYy9FI6rYR03KCseB/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById('msg');
+
+        form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = 'Message sent successfully'
+                setTimeout(function() {
+                    msg.innerHTML = ''
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
         </body>
 </html>
