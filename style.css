@@ -118,6 +118,10 @@ nav ul li a:hover::after {
 
 }
 
+.sub-title2 {
+    margin-top: 50px;
+}
+
 .tab-titles {
     display: flex;
     margin: 20px 0 40px;
