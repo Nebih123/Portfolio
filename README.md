@@ -1,4 +1,4 @@
-# Portfolio Website
+# Personal Website
 
 Welcome to my personal website! 
 This project showcases my skills and experiences, providing an overview of my background, projects, and contact information. 
